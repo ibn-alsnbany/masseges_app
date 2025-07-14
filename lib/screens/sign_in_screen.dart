@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../widgets/my_button.dart';
 
 class SigninScreen extends StatefulWidget {
+  static const String signinRoute = 'sign_in_screen';
   const SigninScreen({super.key});
 
   @override
@@ -20,6 +21,7 @@ class _SigninScreenState extends State<SigninScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
+            // ignore: sized_box_for_whitespace
             Container(height: 180, child: Image.asset('images/logo.png')),
             SizedBox(height: 50),
             TextField(

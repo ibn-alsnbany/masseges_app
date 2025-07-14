@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../widgets/my_button.dart';
 
 class WelcomeScreen extends StatefulWidget {
+  static const String screenRoute = 'welcome_screen';
   const WelcomeScreen({super.key});
 
   @override
@@ -22,6 +23,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
           children: [
             Column(
               children: [
+                // ignore: sized_box_for_whitespace
                 Container(height: 180, child: Image.asset('images/logo.png')),
                 Text(
                   'Massege App',

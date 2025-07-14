@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:masseges_app/widgets/my_button.dart';
 
 class RegistertionScreen extends StatefulWidget {
+  static const String regisertionRoute = 'registertion_screen';
+
   const RegistertionScreen({super.key});
 
   @override
@@ -19,6 +21,7 @@ class _RegistertionScreenState extends State<RegistertionScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
+            // ignore: sized_box_for_whitespace
             Container(height: 180, child: Image.asset('images/logo.png')),
             SizedBox(height: 50),
             TextField(
