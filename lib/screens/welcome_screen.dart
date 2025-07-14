@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:masseges_app/screens/registertion_screen.dart';
 import 'package:masseges_app/screens/sign_in_screen.dart';
 
 import '../widgets/my_button.dart';
@@ -47,7 +48,12 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
             MyButton(
               color: Colors.blue[800]!,
               title: 'register',
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushNamed(
+                  context,
+                  RegistertionScreen.regisertionRoute,
+                );
+              },
             ),
           ],
         ),
