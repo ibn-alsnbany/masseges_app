@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:masseges_app/screens/sign_in_screen.dart';
 
 import '../widgets/my_button.dart';
 
@@ -39,7 +40,9 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
             MyButton(
               color: Colors.yellow[900]!,
               title: 'Sign In',
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushNamed(context, SigninScreen.signinRoute);
+              },
             ),
             MyButton(
               color: Colors.blue[800]!,
