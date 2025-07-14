@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:masseges_app/widgets/my_button.dart';
 
-class RegistertionScreen extends StatefulWidget {
-  const RegistertionScreen({super.key});
+import '../widgets/my_button.dart';
+
+class SigninScreen extends StatefulWidget {
+  const SigninScreen({super.key});
 
   @override
-  State<RegistertionScreen> createState() => _RegistertionScreenState();
+  State<SigninScreen> createState() => _SigninScreenState();
 }
 
-class _RegistertionScreenState extends State<RegistertionScreen> {
+class _SigninScreenState extends State<SigninScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -69,8 +70,8 @@ class _RegistertionScreenState extends State<RegistertionScreen> {
             ),
             SizedBox(height: 10),
             MyButton(
-              color: Colors.blue[800]!,
-              title: 'register',
+              color: Colors.yellow[900]!,
+              title: 'Sign In',
               onPressed: () {},
             ),
           ],
