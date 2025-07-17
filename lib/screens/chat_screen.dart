@@ -36,10 +36,18 @@ class _ChatScreenState extends State<ChatScreen> {
     }
   }
 
-  void getmessages() async {
-    final messages = await _firestore.collection('messages').get();
-    for (var message in messages.docs) {
-      print(message.data());
+  // void getmessages() async {
+  //   final messages = await _firestore.collection('messages').get();
+  //   for (var message in messages.docs) {
+  //     print(message.data());
+  //   }
+  // }
+
+  void messagesStreams() async {
+    await for (var snapshot in _firestore.collection('messages').snapshots()) {
+      for (var message in snapshot.docs) {
+        print(message.data());
+      }
     }
   }
 
@@ -58,7 +66,7 @@ class _ChatScreenState extends State<ChatScreen> {
         actions: [
           IconButton(
             onPressed: () {
-              getmessages();
+              messagesStreams();
               // _auth.signOut();
               // Navigator.pop(context);
             },
@@ -71,7 +79,31 @@ class _ChatScreenState extends State<ChatScreen> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Container(),
+            StreamBuilder<QuerySnapshot>(
+              stream: _firestore.collection('messages').snapshots(),
+              builder: (context, snapshot) {
+                List<Text> messageWidgets = [];
+
+                if (!snapshot.hasData) {
+                  return Center(
+                    child: CircularProgressIndicator(
+                      backgroundColor: Colors.blue,
+                    ),
+                  );
+                }
+
+                final messages = snapshot.data!.docs;
+                for (var message in messages) {
+                  final messageText = message.get('text');
+                  final messageSender = message.get('sender');
+                  final messageWidget = Text('$messageText - $messageSender');
+
+                  messageWidgets.add(messageWidget);
+                }
+
+                return Column(children: messageWidgets);
+              },
+            ),
             Container(
               decoration: BoxDecoration(
                 border: Border(top: BorderSide(color: Colors.orange, width: 2)),
