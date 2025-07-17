@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "16435522385",
+    "project_id": "massege-app-21e25",
+    "storage_bucket": "massege-app-21e25.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:16435522385:android:d2490e2b3d63ca719bc170",
+        "android_client_info": {
+          "package_name": "com.example.masseges_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBrlOZ_0vdC8ayra6qfnu7kpA8Qi2KPocY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
