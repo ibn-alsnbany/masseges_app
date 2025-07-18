@@ -98,6 +98,7 @@ class _RegistertionScreenState extends State<RegistertionScreen> {
                   });
 
                   try {
+                    // ignore: unused_local_variable
                     final newUser = await _auth.createUserWithEmailAndPassword(
                       email: email,
                       password: password,

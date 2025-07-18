@@ -101,6 +101,7 @@ class _SigninScreenState extends State<SigninScreen> {
                       email: email,
                       password: password,
                     );
+                    // ignore: unnecessary_null_comparison
                     if (user != null) {
                       Navigator.pushNamed(context, ChatScreen.chatRoute);
                     }
